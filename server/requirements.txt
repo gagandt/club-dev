@@ -1,0 +1,17 @@
+astroid
+colorama
+Django
+django-cors-headers
+django-filter
+djangorestframework
+djangorestframework-jwt
+isort
+lazy-object-proxy
+mccabe
+pycodestyle
+PyJWT
+pytz
+six
+typed-ast
+wrapt
+djangorestframework_jwt
