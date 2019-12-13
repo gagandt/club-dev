@@ -10,6 +10,14 @@ Vue.config.productionTip = false
 Vue.use(Vuetify);
 Vue.use(VueSession)
 
+import axios from 'axios'
+
+const base = axios.create({
+  baseURL: 'http://localhost:8000'
+})
+
+Vue.prototype.$http = base
+
 new Vue({
   vuetify,
   router,
