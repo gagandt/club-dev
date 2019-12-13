@@ -1,13 +1,16 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.http import HttpResponse, JsonResponse
+
+from rest_framework.response import Response
 
 from .models import Event
+from .serializers import EventSerializer
 
 
 def index(request):
-    latest_events_list = Event.objects.order_by('-organised_on')[:5]
-    output = ', '.join([q.description for q in latest_events_list])
-    return HttpResponse(output)
+    events = Event.objects.all()
+    serializer = EventSerializer(events, many=True)
+    return JsonResponse(serializer.data, safe=False)
     # return HttpResponse(Event.objects.all())
 
 def detail(request, event_id):
