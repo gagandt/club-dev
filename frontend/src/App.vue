@@ -63,6 +63,7 @@
 
 <script>
   import Navigation from './components/Navigation.vue';
+  import router from './router';
   export default {
     components :{
       Navigation
@@ -74,6 +75,16 @@
     }),
     created() {
       this.$vuetify.theme.dark = true;
+      this.checkLoggedIn();
+
+    },
+    methods: {
+      checkLoggedIn() {
+        this.$session.start();
+        if (!this.$session.has("token")) {
+          router.push("/auth");
+        }
+      }
     }
   }
 </script>

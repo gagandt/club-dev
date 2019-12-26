@@ -103,27 +103,39 @@ export default {
           ]
         }
     }),
+    created() {
+      this.checkLoggedIn();
+
+    },
     methods: {
-        login() {
-          if (this.$refs.form.validate()) {
-              this.loading = true;
-              axios.post('http://localhost:8000/auth/', this.credentials).then(res => {
-                this.$session.start();
-                this.$session.set('token', res.data.token);
-                router.push('/home');
-              }).catch(e => {
-                this.loading = false;
-                swal({
-                  type: 'warning',
-                  title: 'Error',
-                  text: 'Wrong username or password',
-                  showConfirmButton:false,
-                  showCloseButton:false,
-                  timer:3000
-                })
-              });
-            }
+      checkLoggedIn() {
+        this.$session.start();
+        if (this.$session.has("token")) {
+          this.$swal('User already logged in!', 'Please Log-out first to log in once again.', 'info', 'OK!').then( e => {
+            router.push("/home");
+          });
         }
+      },
+      login() {
+        if (this.$refs.form.validate()) {
+            this.loading = true;
+            axios.post('http://localhost:8000/auth/', this.credentials).then(res => {
+              this.$session.start();
+              this.$session.set('token', res.data.token);
+              router.push('/home');
+            }).catch(e => {
+              this.loading = false;
+              swal({
+                type: 'warning',
+                title: 'Error',
+                text: 'Wrong username or password',
+                showConfirmButton:false,
+                showCloseButton:false,
+                timer:3000
+              })
+            });
+          }
+      }
     }
 }
 </script>
