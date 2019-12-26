@@ -13,10 +13,9 @@
           sm8
           md4
         >
-          <v-card class="elevation-12">
+          <v-card class="elevation-12" style="margin-left: -200px;">
             <v-toolbar 
               dark 
-              color="primary"
             >
               <v-toolbar-title>IIT Mandi Music Society - Login</v-toolbar-title>
               <v-spacer />
@@ -53,7 +52,6 @@
             <v-card-actions>
               <v-spacer />
               <v-btn
-                color="primary"
                 @click="login"
               >
                 Login
@@ -96,7 +94,12 @@ export default {
               axios.post('http://localhost:8000/auth/', this.credentials).then(res => {
                 this.$session.start();
                 this.$session.set('token', res.data.token);
-                router.push('/');
+                sessionStorage.setItem('authToken', res.data.token)
+                sessionStorage.setItem('username', this.credentials.username)
+                console.log(sessionStorage.getItem("username"))
+                router.push('/')
+                location.reload();
+                
               }).catch(e => {
                 this.loading = false;
                 swal({

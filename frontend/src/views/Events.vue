@@ -1,6 +1,6 @@
 <template>
   <v-content>
-    Hi!
+    {{ info }}
   </v-content>
 </template>
 
@@ -8,15 +8,15 @@
 export default {
     name: 'Events',
     data: () => ({
+      'info': null
     }),
     created() {
       this.loadEvents();
     },
     methods: {
       loadEvents() {
-        this.$http.get('events').then(res => {
-          console.log(res.data);
-        }).catch(e => {
+        this.$http.get('events').then(res => (this.info = res.data))
+        .catch(e => {
           console.log(e);
         });
       }

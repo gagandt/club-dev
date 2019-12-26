@@ -17,7 +17,7 @@ const base = axios.create({
 })
 
 Vue.prototype.$http = base
-
+export const bus = new Vue();
 new Vue({
   vuetify,
   router,

@@ -1,16 +1,17 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
+import Home from '@/views/Home.vue'
 import Auth from '@/components/pages/Auth'
-
+import AddSong from '@/components/pages/AddSong'
 import Events from '@/views/Events.vue'
+import GetSong from '@/components/pages/GetSong'
 
 Vue.use(VueRouter)
 
 const routes = [
   {
     path: '/',
-    name: 'Auth',
-    component: Auth
+    name: 'index',
   },
   {
     path: '/auth',
@@ -21,6 +22,17 @@ const routes = [
     path: '/events',
     name: 'Events',
     component: Events
+  },
+  {
+    path: '/song',
+    name: 'AddSong',
+    component: AddSong
+  },
+  {
+
+    path: '/getsong',
+    name: 'GetSong',
+    component: GetSong
   }
 ]
 
