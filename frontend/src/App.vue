@@ -13,10 +13,23 @@
       clipped-left
       app
       height="80px"
+      style="padding-left: 20px"
     >
       <v-app-bar-nav-icon
         @click.stop="primaryDrawer.model = !primaryDrawer.model"
       />
+      
+      <v-toolbar-title
+        class="font-weight-bold"
+      >  
+        <v-img
+          :src="require('./assets/image.png')"
+          class="my-03"
+          contain
+          width="80"
+          height="80"
+        ></v-img>
+      </v-toolbar-title>
       <v-toolbar-title
         class="font-weight-bold"
       >
