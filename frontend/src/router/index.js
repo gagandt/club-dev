@@ -1,16 +1,16 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Auth from '@/components/pages/Auth'
+import Auth from '@/views/Auth'
 
 import Events from '@/views/Events.vue'
+import About from '@/views/About.vue'
 
 Vue.use(VueRouter)
 
 const routes = [
   {
     path: '/',
-    name: 'Auth',
-    component: Auth
+    name: 'index',
   },
   {
     path: '/auth',
@@ -21,6 +21,11 @@ const routes = [
     path: '/events',
     name: 'Events',
     component: Events
+  },
+  {
+    path: '/about',
+    name: 'About',
+    component: About
   }
 ]
 
