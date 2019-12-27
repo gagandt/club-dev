@@ -4,6 +4,7 @@ import Auth from '@/views/Auth'
 
 import Events from '@/views/Events.vue'
 import About from '@/views/About.vue'
+import Members from '@/views/Members.vue'
 
 Vue.use(VueRouter)
 
@@ -21,6 +22,11 @@ const routes = [
     path: '/events',
     name: 'Events',
     component: Events
+  },
+  {
+    path: '/members',
+    name: 'Members',
+    component: Members
   },
   {
     path: '/about',

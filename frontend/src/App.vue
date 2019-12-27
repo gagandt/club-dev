@@ -28,7 +28,7 @@
           contain
           width="80"
           height="80"
-        ></v-img>
+        />
       </v-toolbar-title>
       <v-toolbar-title
         class="font-weight-bold"
@@ -43,11 +43,8 @@
           align="center"
           justify="center"
         >
-          <v-col cols="11">
-            <v-card>
-              Content
-              <router-view />
-            </v-card>
+          <v-col cols="11">                         
+            <router-view />
           </v-col>
         </v-row>
       </v-container>

@@ -34,7 +34,7 @@
         { icon: 'mdi-calendar-multiple', text: 'Events', route: '/events'},
         { icon: 'mdi-music-circle', text: 'Originals'},
         { icon: 'queue_music', text: 'Curated Playlists'},
-        { icon: 'mdi-contacts', text: 'Members', route: '/auth'},        
+        { icon: 'mdi-contacts', text: 'Members', route: '/members'},        
         { icon: 'mdi-settings', text: 'Settings' },
         { icon: 'mdi-discord', text: 'Discussion' },
         { icon: 'info', text: 'About', route: '/about' },
