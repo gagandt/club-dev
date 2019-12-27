@@ -22,4 +22,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('auth/', obtain_jwt_token),
     path('events/', include('events.urls')),
+    path('members/', include('members.urls')),
 ]

@@ -43,7 +43,8 @@ INSTALLED_APPS = [
     'rest_framework.authtoken',
     'corsheaders',
 
-    'events'
+    'events',
+    'members',
 ]
 
 REST_FRAMEWORK = {
